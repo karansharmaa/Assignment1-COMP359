@@ -8,6 +8,8 @@ Our task for this assignment was to:
 
 As a result, we chose **Bubble Sort**, **Merge Sort**, **Selection Sort**, and **Counting Sort** as our sorting algorithms for this assignment.
 
+Our general assumption is that, regardless of the sorting method, the time required to sort an array increases with the array size.
+
 ## Time Complexities
 
 The complexities for the algorithms are as follows:
