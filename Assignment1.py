@@ -93,11 +93,12 @@ def counting_sort(arr):
     output = [0] * len(arr)
     
     # Build the sorted array
-    for num in reversed(arr):
-        output[count[num - min_val] - 1] = num
-        count[num - min_val] -= 1
+    for num in range(len(arr) - 1, -1, -1):
+        output[count[arr[num] - min_val] - 1] = arr[num]
+        count[arr[num] - min_val] -= 1
     
     return output
+
 
  
 #using the matplotlib library, we will plot the runtimes of the algorithms and show the 
@@ -111,7 +112,7 @@ def plotOnGraph(sizes, bubble, merge, counting):
     plt.plot(sizes, counting, label='Counting Sort (O(n))', marker='o')
     plt.title('Sorting Algorithms Time Complexity')
     plt.xlabel('Input Size (n)')
-    plt.ylabel('Time (seconds)')
+    plt.ylabel('Time (ms)')
     plt.legend()
     plt.grid(True)
     plt.show()
@@ -119,7 +120,7 @@ def plotOnGraph(sizes, bubble, merge, counting):
 if __name__ == "__main__": 
     
     # We will be using arrays of different sizes as below and to test out sorting speed. 
-    sizes = np.array([100, 200, 400, 800, 1600, 3200, 5000])
+    sizes = np.array([100, 200, 400, 800, 1600, 3200, 5000, 10000])
 
     # These will be used to store the time used by sorting of each iteration of the array size per algorithm
     bubble_times = []
@@ -133,7 +134,7 @@ if __name__ == "__main__":
         #into the for loop. 
         arr = np.random.randint(0, 10000, size)
         #using time library, we will calculate how long it takes to sort using bubble sort. 
-        start_time = time.time()
+        start_time = time.perf_counter()
         bubble_sort(arr.copy())
         bubble_times.append(time.time() - start_time)
 
@@ -144,18 +145,18 @@ if __name__ == "__main__":
         #into the for loop. 
         arr = np.random.randint(0, 10000, size)
         #using time library, we will calculate how long it takes to sort using merge sort
-        start_time = time.time()
+        start_time = time.perf_counter()
         merge_sort(arr.copy())
         merge_times.append(time.time() - start_time)
     
-    # Measure time for Merge Sort - these times will be stored in merge_times 
+    # Measure time for Counting Sort - these times will be stored in counting_times 
     #and be plotted  into the graph we will use to show runtimes. 
     for size in sizes: 
         #random integers between 0 and 10000 will be choosen and put in to whatever size array is being iterated
         #into the for loop. 
         arr = np.random.randint(0,10000, size)
         #using time library, we will calculate how long it takes to sort using merge sort
-        start_time = time.time()
+        start_time = time.perf_counter()
         counting_sort(arr.copy())
         counting_times.append(time.time() - start_time)
         
