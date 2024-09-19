@@ -122,10 +122,10 @@ def selection_sort(arr):
 def plotOnGraph(sizes, bubble, merge, counting, select): 
     # Plotting the results
     plt.figure(figsize=(10,6))
-    #plt.plot(sizes, bubble, label='Bubble Sort (O(n^2))', marker='o')
+    plt.plot(sizes, bubble, label='Bubble Sort (O(n^2))', marker='o')
     plt.plot(sizes, merge, label='Merge Sort (O(n log n))', marker='o')
     plt.plot(sizes, counting, label='Counting Sort (O(n))', marker='o')
-    #plt.plot(sizes, select, label='Selection Sort (O(n^2))', marker='o')
+    plt.plot(sizes, select, label='Selection Sort (O(n^2))', marker='o')
     plt.title('Sorting Algorithms Time Complexity')
     plt.xlabel('Input Size (n)')
     plt.ylabel('Time (ms)')
