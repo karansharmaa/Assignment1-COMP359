@@ -17,7 +17,7 @@ The complexities for the algorithms are as follows:
 - **Counting Sort**: Linear \(O(n + k)\), which simplifies to \(O(n)\) under certain conditions
 - **Selection Sort**: Quadratic \(O(n^2)\)
 
-After researching these sorting algorithms, we were able to implement them (as seen in the `assignment1.py` file, coded by Karan).
+After researching these sorting algorithms, we were able to implement them (as seen in the `assignment1.py` file, coded by Karan and Amarnoor).
 
 ## Sorting Process
 
