@@ -46,7 +46,7 @@ From our observations, the runtime plots aligned with our expectations based on 
 
 - **Bubble Sort** shows quadratic growth in the graph. **Not an efficient sorting method**.
 - **Merge Sort** shows linearithmic growth. **Very efficient**. 
-- **Counting Sort** shows linear growth. **Most efficient**
+- **Counting Sort** shows linear growth. **Most efficient**.
 
 
 ## References
