@@ -31,18 +31,20 @@ We used `for` loops to iterate through these values, creating arrays of each spe
 
 We used the **Matplotlib** library to create a graph that plotted the runtimes against the array sizes. The graph was displayed in a GUI as output.
 
-**The output was as follows**: ![image](https://github.com/user-attachments/assets/1796cfcb-0102-42a0-8c74-d865c3e886da)
+**The output was as follows (with BubbleSort)**: ![image](https://github.com/user-attachments/assets/1796cfcb-0102-42a0-8c74-d865c3e886da)
+In this output, we can see that MergeSort and CountingSort are not portrayed fairly - mostly due to the runtime of BubbleSort being too high (clue: bubble sort is very inefficient). 
+
+**Here is the output with BubbleSort taken out to represent MergeSort and CountingSort properly**: ![image](https://github.com/user-attachments/assets/39361c95-e1f9-4cd6-ad35-7b2ff2ca82cd)
+
 
 
 ## Observations
 
 From our observations, the runtime plots aligned with our expectations based on the algorithm analyses:
 
-- **Bubble Sort** shows quadratic growth in the graph.
-- **Merge Sort** shows linearithmic growth.
-- **Counting Sort** shows linear growth. Usually, counting sort has a time complexity of \(O(n + k)\), where \(n\) is the number of elements and \(k\) is the range of input values.
-In this case, we noticed an unusual result where the \(k\) value appeared to be zero. Due to this, we encountered difficulties determining the exact reason for this outcome. This is something that may need some research. 
-
+- **Bubble Sort** shows quadratic growth in the graph. **Not an efficient sorting method**.
+- **Merge Sort** shows linearithmic growth. **Very efficient**. 
+- **Counting Sort** shows linear growth. **Most efficient**
 
 
 ## References
