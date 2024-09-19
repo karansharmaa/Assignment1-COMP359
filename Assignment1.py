@@ -24,7 +24,7 @@ def bubble_sort(arr):
         if not swapped:
             break
 
-# Merge Sort (O(n log n))
+# Merge Sort linearithmic (O(n log n))
 # created with help from chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
 # and with help from geeksforgeeks: https://www.geeksforgeeks.org/merge-sort/
 def merge_sort(arr):
@@ -65,7 +65,7 @@ def merge_sort(arr):
             j += 1
             k += 1
             
-#Counting sort: O(n)
+#Counting sort: linear O(n)
 #created with help from geeksforgeeks and chatgpt
 #geeksforgeek: https://www.geeksforgeeks.org/counting-sort/
 #chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
@@ -98,7 +98,7 @@ def counting_sort(arr):
         count[arr[num] - min_val] -= 1
     
     return output
-# Selection Sort (O(n^2)
+# Selection Sort quadratic (O(n^2)
 # Created with help from geeksforgeeks:  https://www.geeksforgeeks.org/selection-sort-algorithm-2/
 def selection_sort(arr):
     n = len(arr)
