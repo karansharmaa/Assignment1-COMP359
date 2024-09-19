@@ -30,7 +30,7 @@ We used `for` loops to iterate through these values, creating arrays of each spe
 
 We used the **Matplotlib** library to create a graph that plotted the runtimes against the array sizes. The graph was displayed in a GUI as output.
 
-The output was as follows: ![image](https://github.com/user-attachments/assets/44d13671-0411-4e3f-8637-c2887712cfaa) 
+**The output was as follows**: ![image](https://github.com/user-attachments/assets/44d13671-0411-4e3f-8637-c2887712cfaa) 
 
 ## Observations
 
