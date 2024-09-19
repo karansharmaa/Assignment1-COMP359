@@ -117,6 +117,7 @@ def plotOnGraph(sizes, bubble, merge, counting):
     plt.show()
     
 if __name__ == "__main__": 
+    
     # We will be using arrays of different sizes as below and to test out sorting speed. 
     sizes = np.array([100, 200, 400, 800, 1600, 3200, 5000])
 
