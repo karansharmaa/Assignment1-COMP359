@@ -3,7 +3,7 @@ import time
 import matplotlib.pyplot as plt
 
 # Bubble Sort (Quadratic O(n^2))
-# generated this algorithm in chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
+# created with help from chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
 # and with help from geeksforgeeks: https://www.geeksforgeeks.org/bubble-sort-algorithm/
 def bubble_sort(arr):
     n = len(arr)
@@ -25,7 +25,7 @@ def bubble_sort(arr):
             break
 
 # Merge Sort (O(n log n))
-# generated this algorithm in chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
+# created with help from chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
 # and with help from geeksforgeeks: https://www.geeksforgeeks.org/merge-sort/
 def merge_sort(arr):
     if len(arr) > 1:
@@ -66,7 +66,7 @@ def merge_sort(arr):
             k += 1
             
 #Counting sort: O(n)
-#generated with help from geeksforgeeks and chatgpt
+#created with help from geeksforgeeks and chatgpt
 #geeksforgeek: https://www.geeksforgeeks.org/counting-sort/
 #chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
 def counting_sort(arr):
