@@ -159,7 +159,7 @@ if __name__ == "__main__":
         counting_sort(arr.copy())
         counting_times.append(time.time() - start_time)
         
-        
+    #calling the graph plotting method to create a graph and display it in a GUI
     plotOnGraph(sizes, bubble_times, merge_times, counting_times)
 
 
