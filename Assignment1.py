@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 
 # Bubble Sort (Quadratic O(n^2))
 def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
+    m = len(arr)
+    for i in range(m):
+        for j in range(0, m-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
-# Merge Sort (Linearithmic O(n log n))
+# Merge Sort (O(n log n))
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
