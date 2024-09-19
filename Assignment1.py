@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 
 # Bubble Sort (Quadratic O(n^2))
 def bubble_sort(arr):
-    m = len(arr)
-    for i in range(m):
-        for j in range(0, m-i-1):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
