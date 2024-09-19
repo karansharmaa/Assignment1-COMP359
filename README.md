@@ -6,7 +6,7 @@ Our task for this assignment was to:
 
 > "Plot the runtimes for sorting input arrays of different sizes, at least for a quadratic sort and a linearithmic sort. Are the runtime plots shaped as we would expect from their analyses?"
 
-As a result, we chose **Bubble Sort**, **Merge Sort**, and **Counting Sort** as our sorting algorithms for this assignment.
+As a result, we chose **Bubble Sort**, **Merge Sort**, **Selection Sort**, and **Counting Sort** as our sorting algorithms for this assignment.
 
 ## Time Complexities
 
