@@ -33,20 +33,21 @@ We used `for` loops to iterate through these values, creating arrays of each spe
 
 We used the **Matplotlib** library to create a graph that plotted the runtimes against the array sizes. The graph was displayed in a GUI as output.
 
-**The output was as follows (with BubbleSort)**: ![image](https://github.com/user-attachments/assets/1796cfcb-0102-42a0-8c74-d865c3e886da)
-In this output, we can see that MergeSort and CountingSort are not portrayed fairly - mostly due to the runtime of BubbleSort being too high (clue: bubble sort is very inefficient). 
+**The output was as follows (with BubbleSort and SelectionSort)**: ![image](https://github.com/user-attachments/assets/793bed4a-cb58-471e-a3c5-2a6a05733301)
 
-**Here is the output with BubbleSort taken out to represent MergeSort and CountingSort properly**: ![image](https://github.com/user-attachments/assets/39361c95-e1f9-4cd6-ad35-7b2ff2ca82cd)
+In this output, we can see that MergeSort and CountingSort are not portrayed fairly - mostly due to the runtime of BubbleSort and SelectionSort being too high (clue: bubble sort is very inefficient. selection sort is better but....). 
 
+**Here is the output with BubbleSort and SelectionSort taken out to represent MergeSort and CountingSort properly**: ![image](https://github.com/user-attachments/assets/8d63b972-555d-4010-a341-bf4ce86eff40)
 
 
 ## Observations
 
 From our observations, the runtime plots aligned with our expectations based on the algorithm analyses:
 
-- **Bubble Sort** shows quadratic growth in the graph. **Not an efficient sorting method**.
+- **Bubble Sort** shows quadratic growth. **Not an efficient sorting method**.
 - **Merge Sort** shows linearithmic growth. **Very efficient**. 
 - **Counting Sort** shows linear growth. **Most efficient**.
+- **SelectionSort** shows quadratic growth. **A better sorting method than BubbleSort**
 
 
 ## References
@@ -57,6 +58,7 @@ We used some help from chatgpt and did our research mostly on geeksforgeeks.org.
 - **BubbleSort**: https://www.geeksforgeeks.org/bubble-sort-algorithm/
 - **MergeSort**:  https://www.geeksforgeeks.org/merge-sort/
 - **CountingSort**: https://www.geeksforgeeks.org/counting-sort/
+- **SelectionSort**: https://www.geeksforgeeks.org/selection-sort-algorithm-2/
 - **MatPlotLib**: https://www.geeksforgeeks.org/matplotlib-tutorial/ & https://www.youtube.com/watch?v=D4VlmL3G4_o
 
   
