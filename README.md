@@ -39,6 +39,16 @@ In this output, we can see that MergeSort and CountingSort are not portrayed fai
 
 **Here is the output with BubbleSort and SelectionSort taken out to represent MergeSort and CountingSort properly**: ![image](https://github.com/user-attachments/assets/8d63b972-555d-4010-a341-bf4ce86eff40)
 
+## Code
+This project requires the installation of the `NumPy` and `Matplotlib` libraries in Python to function correctly.
+
+To install the necessary libraries, run the following commands in your terminal or command prompt:
+
+```bash
+pip3 install matplotlib
+pip3 install numpy
+```
+  
 
 ## Observations
 
