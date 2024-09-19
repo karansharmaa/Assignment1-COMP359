@@ -98,7 +98,8 @@ def counting_sort(arr):
         count[arr[num] - min_val] -= 1
     
     return output
-
+# Selection Sort (O(n^2)
+# Created with help from geeksforgeeks:  https://www.geeksforgeeks.org/selection-sort-algorithm-2/
 def selection_sort(arr):
     n = len(arr)
     
