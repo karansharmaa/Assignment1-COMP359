@@ -1,6 +1,8 @@
 import numpy as np
 import time
 import matplotlib.pyplot as plt
+import tkinter as tk
+from tkinter import StringVar, OptionMenu
 
 # Bubble Sort (Quadratic O(n^2))
 # created with help from chatgpt: https://chatgpt.com/c/66eb8505-7cf8-8006-ae34-9dc5b74ab0a2
@@ -64,6 +66,18 @@ def merge_sort(arr):
             arr[k] = right_half[j]
             j += 1
             k += 1
+
+# QuickSort: Another O(n log n) algorithm
+# created with help from chatgpt and geeksforgeeks: https://www.geeksforgeeks.org/quick-sort/
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]
+        left = [x for x in arr if x < pivot]
+        middle = [x for x in arr if x == pivot]
+        right = [x for x in arr if x > pivot]
+        return quick_sort(left) + middle + quick_sort(right)
             
 #Counting sort: linear O(n)
 #created with help from geeksforgeeks and chatgpt
@@ -98,6 +112,7 @@ def counting_sort(arr):
         count[arr[num] - min_val] -= 1
     
     return output
+
 # Selection Sort quadratic (O(n^2)
 # Created with help from geeksforgeeks:  https://www.geeksforgeeks.org/selection-sort-algorithm-2/
 def selection_sort(arr):
@@ -115,17 +130,51 @@ def selection_sort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     
     return arr
+
+# Tkinter GUI setup: allows user to select algorithms to compare
+def run_gui():
+    root = tk.Tk()
+    root.title('Sorting Algorithm Comparison')
+
+    algorithms = ['Bubble Sort', 'Merge Sort', 'Quick Sort', 'Counting Sort', 'Selection Sort']
+    sizes = np.array([100, 200, 400, 800, 1600, 3200, 5000, 10000])
+
+    var1 = StringVar(root)
+    var1.set(algorithms[0])
+    drop1 = OptionMenu(root, var1, *algorithms)
+    drop1.grid(row=0, column=1)
+
+    var2 = StringVar(root)
+    var2.set(algorithms[1])
+    drop2 = OptionMenu(root, var2, *algorithms)
+    drop2.grid(row=1, column=1)
+
+    label1 = tk.Label(root, text="Select first algorithm:")
+    label1.grid(row=0, column=0)
+    label2 = tk.Label(root, text="Select second algorithm:")
+    label2.grid(row=1, column=0)
+
+    def on_compare():
+        algo1 = var1.get()
+        algo2 = var2.get()
+        plot_algorithms([algo1, algo2], sizes)
+
+    button = tk.Button(root, text="Compare", command=on_compare)
+    button.grid(row=2, column=1)
+
+    root.mainloop()
  
 #using the matplotlib library, we will plot the runtimes of the algorithms and show the 
 #difference between time complexities.          
 #learned how to do this from: https://www.geeksforgeeks.org/matplotlib-tutorial/  
-def plotOnGraph(sizes, bubble, merge, counting, select): 
+def plotOnGraph(sizes, bubble, merge, counting, select, quick): 
     # Plotting the results
     plt.figure(figsize=(10,6))
     plt.plot(sizes, bubble, label='Bubble Sort (O(n^2))', marker='o')
     plt.plot(sizes, merge, label='Merge Sort (O(n log n))', marker='o')
     plt.plot(sizes, counting, label='Counting Sort (O(n))', marker='o')
     plt.plot(sizes, select, label='Selection Sort (O(n^2))', marker='o')
+    plt.plot(sizes, quick, label='QuickSort (O(n log n))', marker='o')
     plt.title('Sorting Algorithms Time Complexity')
     plt.xlabel('Input Size (n)')
     plt.ylabel('Time (ms)')
@@ -133,62 +182,49 @@ def plotOnGraph(sizes, bubble, merge, counting, select):
     plt.grid(True)
     plt.show()
     
-if __name__ == "__main__": 
-    
-    # We will be using arrays of different sizes as below and to test out sorting speed. 
-    sizes = np.array([100, 200, 400, 800, 1600, 3200, 5000, 10000])
-
-    # These will be used to store the time used by sorting of each iteration of the array size per algorithm
+def plot_algorithms(algorithms, sizes):
     bubble_times = []
     merge_times = []
     counting_times = []
     select_times = []
+    quick_times = []
 
-    # Measure time for Bubble Sort - these times will be stored in bubble_times 
-    #and be plotted  into the graph we will use to show runtimes. 
+    # Measure time for each algorithm - these times will be stored in respective lists 
     for size in sizes:
-        #random integers between 0 and 10000 will be choosen and put in to whatever size array is being iterated
-        #into the for loop. 
         arr = np.random.randint(0, 10000, size)
-        #using time library, we will calculate how long it takes to sort using bubble sort. 
-        start_time = time.perf_counter()
-        bubble_sort(arr.copy())
-        bubble_times.append((time.perf_counter() - start_time) * 1000)
+        # Measure time for Bubble Sort
+        if 'Bubble Sort' in algorithms:
+            start_time = time.perf_counter()
+            bubble_sort(arr.copy())
+            bubble_times.append((time.perf_counter() - start_time) * 1000)
 
-    # Measure time for Merge Sort - these times will be stored in merge_times 
-    #and be plotted  into the graph we will use to show runtimes. 
-    for size in sizes:
-        #random integers between 0 and 10000 will be choosen and put in to whatever size array is being iterated
-        #into the for loop. 
-        arr = np.random.randint(0, 10000, size)
-        #using time library, we will calculate how long it takes to sort using merge sort
-        start_time = time.perf_counter()
-        merge_sort(arr.copy())
-        merge_times.append((time.perf_counter() - start_time) * 1000)
-    
-    # Measure time for Counting Sort - these times will be stored in counting_times 
-    #and be plotted  into the graph we will use to show runtimes. 
-    for size in sizes: 
-        #random integers between 0 and 10000 will be choosen and put in to whatever size array is being iterated
-        #into the for loop. 
-        arr = np.random.randint(0,10000, size)
-        #using time library, we will calculate how long it takes to sort using merge sort
-        start_time = time.perf_counter()
-        counting_sort(arr.copy())
-        counting_times.append((time.perf_counter() - start_time) * 1000)
+        # Measure time for Merge Sort
+        if 'Merge Sort' in algorithms:
+            start_time = time.perf_counter()
+            merge_sort(arr.copy())
+            merge_times.append((time.perf_counter() - start_time) * 1000)
 
-    # Measure time for Selection Sort - these times will be stored in select_times 
-    #and be plotted  into the graph we will use to show runtimes
-    for size in sizes: 
-        #random integers between 0 and 10000 will be choosen and put in to whatever size array is being iterated
-        #into the for loop. 
-        arr = np.random.randint(0,10000, size)
-        #using time library, we will calculate how long it takes to sort using selection sort
-        start_time = time.perf_counter()
-        selection_sort(arr.copy())
-        select_times.append((time.perf_counter() - start_time) * 1000)
-        
-    #calling the graph plotting method to create a graph and display it in a GUI
-    plotOnGraph(sizes, bubble_times, merge_times, counting_times, select_times)
+        # Measure time for QuickSort
+        if 'Quick Sort' in algorithms:
+            start_time = time.perf_counter()
+            quick_sort(arr.copy())
+            quick_times.append((time.perf_counter() - start_time) * 1000)
 
+        # Measure time for Counting Sort
+        if 'Counting Sort' in algorithms:
+            start_time = time.perf_counter()
+            counting_sort(arr.copy())
+            counting_times.append((time.perf_counter() - start_time) * 1000)
+
+        # Measure time for Selection Sort
+        if 'Selection Sort' in algorithms:
+            start_time = time.perf_counter()
+            selection_sort(arr.copy())
+            select_times.append((time.perf_counter() - start_time) * 1000)
+            
+    # Call plotting function
+    plotOnGraph(sizes, bubble_times, merge_times, counting_times, select_times, quick_times)
+
+if __name__ == "__main__":
+    run_gui()
 
