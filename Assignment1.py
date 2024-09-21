@@ -168,61 +168,79 @@ def run_gui():
 #difference between time complexities.          
 #learned how to do this from: https://www.geeksforgeeks.org/matplotlib-tutorial/  
 def plotOnGraph(sizes, bubble, merge, counting, select, quick): 
-    # Plotting the results
     plt.figure(figsize=(10,6))
-    plt.plot(sizes, bubble, label='Bubble Sort (O(n^2))', marker='o')
-    plt.plot(sizes, merge, label='Merge Sort (O(n log n))', marker='o')
-    plt.plot(sizes, counting, label='Counting Sort (O(n))', marker='o')
-    plt.plot(sizes, select, label='Selection Sort (O(n^2))', marker='o')
-    plt.plot(sizes, quick, label='QuickSort (O(n log n))', marker='o')
+
+    # Plot if Bubble Sort data is available
+    if len(bubble) > 0:
+        plt.plot(sizes, bubble, label='Bubble Sort (O(n^2))', marker='o')
+
+    # Plot if Merge Sort data is available
+    if len(merge) > 0:
+        plt.plot(sizes, merge, label='Merge Sort (O(n log n))', marker='o')
+
+    # Plot if Counting Sort data is available
+    if len(counting) > 0:
+        plt.plot(sizes, counting, label='Counting Sort (O(n))', marker='o')
+
+    # Plot if Selection Sort data is available
+    if len(select) > 0:
+        plt.plot(sizes, select, label='Selection Sort (O(n^2))', marker='o')
+
+    # Plot if QuickSort data is available
+    if len(quick) > 0:
+        plt.plot(sizes, quick, label='QuickSort (O(n log n))', marker='o')
+
     plt.title('Sorting Algorithms Time Complexity')
     plt.xlabel('Input Size (n)')
     plt.ylabel('Time (ms)')
     plt.legend()
     plt.grid(True)
     plt.show()
+
     
 def plot_algorithms(algorithms, sizes):
+    # Initialize empty lists for each algorithm
     bubble_times = []
     merge_times = []
     counting_times = []
     select_times = []
     quick_times = []
 
-    # Measure time for each algorithm - these times will be stored in respective lists 
+    # Measure time for each algorithm only if it is selected
     for size in sizes:
         arr = np.random.randint(0, 10000, size)
-        # Measure time for Bubble Sort
+        
+        # Measure time for Bubble Sort if selected
         if 'Bubble Sort' in algorithms:
             start_time = time.perf_counter()
             bubble_sort(arr.copy())
             bubble_times.append((time.perf_counter() - start_time) * 1000)
 
-        # Measure time for Merge Sort
+        # Measure time for Merge Sort if selected
         if 'Merge Sort' in algorithms:
             start_time = time.perf_counter()
             merge_sort(arr.copy())
             merge_times.append((time.perf_counter() - start_time) * 1000)
 
-        # Measure time for QuickSort
+        # Measure time for QuickSort if selected
         if 'Quick Sort' in algorithms:
             start_time = time.perf_counter()
             quick_sort(arr.copy())
             quick_times.append((time.perf_counter() - start_time) * 1000)
 
-        # Measure time for Counting Sort
+        # Measure time for Counting Sort if selected
         if 'Counting Sort' in algorithms:
             start_time = time.perf_counter()
             counting_sort(arr.copy())
             counting_times.append((time.perf_counter() - start_time) * 1000)
 
-        # Measure time for Selection Sort
+        # Measure time for Selection Sort if selected
         if 'Selection Sort' in algorithms:
             start_time = time.perf_counter()
             selection_sort(arr.copy())
             select_times.append((time.perf_counter() - start_time) * 1000)
-            
-    # Call plotting function
+    
+    # Call plotOnGraph and only pass non-empty lists
     plotOnGraph(sizes, bubble_times, merge_times, counting_times, select_times, quick_times)
 
 if __name__ == "__main__":
