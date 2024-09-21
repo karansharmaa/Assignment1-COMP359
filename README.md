@@ -12,7 +12,7 @@ Our general assumption is that, regardless of the sorting method, the time requi
 
 ## Division Of Work
 - **Karan**: implemented 3/4th of the code. i.e. created and implemented the matplotlib plot GUI, implemented bubble sort, merge sort and counting sort. Created the readme.md.
-- **Amarnoor**: implemented 1/4th of the code. i.e. implemented selection sort. Created the formal word document report. Contributed to the readme.md.
+- **Amarnoor**: implemented 1/4th of the code. i.e. implemented selection sort. Created the formal report documentation. Contributed to the readme.md.
 - **Vibhu**: attempted on creating a secondary GUI to show difference in time complexities. Collaborated and contributed on the formal work document report. 
 
 ## Time Complexities
