@@ -6,13 +6,13 @@ Our task for this assignment was to:
 
 > "Plot the runtimes for sorting input arrays of different sizes, at least for a quadratic sort and a linearithmic sort. Are the runtime plots shaped as we would expect from their analyses?"
 
-As a result, we chose **Bubble Sort**, **Merge Sort**, **Selection Sort**, and **Counting Sort** as our sorting algorithms for this assignment.
+As a result, we chose **Bubble Sort**, **Merge Sort**, **Selection Sort**,**Counting Sort**, and **Quick Sort** as our sorting algorithms for this assignment.
 
 Our general assumption is that, regardless of the sorting method, the time required to sort an array increases with the array size.
 
 ## Division Of Work
 - **Karan**: implemented 3/4th of the code. i.e. created and implemented the matplotlib plot GUI, implemented bubble sort, merge sort and counting sort. Created the readme.md.
-- **Amarnoor**: implemented 1/4th of the code. i.e. implemented selection sort. Created the formal word document report. Contributed to the readme.md.
+- **Amarnoor**: implemented 1/4th of the code. i.e. implemented selection sort. Created the formal report documentation. Contributed to the readme.md.
 - **Vibhu**: attempted on creating a secondary GUI to show difference in time complexities. Collaborated and contributed on the formal work document report. 
 
 ## Time Complexities
@@ -62,7 +62,8 @@ From our observations, the runtime plots aligned with our expectations based on 
 - **Bubble Sort** shows quadratic growth. **Not an efficient sorting method**.
 - **Merge Sort** shows linearithmic growth. **Very efficient**. 
 - **Counting Sort** shows linear growth. **Most efficient**.
-- **SelectionSort** shows quadratic growth. **A better sorting method than BubbleSort**. 
+- **SelectionSort** shows quadratic growth. **A better sorting method than BubbleSort**.
+- **Quick Sort** shows linearithmic growth. 
 
 
 ## References
